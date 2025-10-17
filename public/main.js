@@ -7,6 +7,8 @@ const messageForm = document.getElementById("message-form");
 const messageInput = document.getElementById("message-input");
 const messageFeedback = document.querySelector(".message-feedback");
 
+const messageTone = new Audio("/message-tone.mp3");
+
 socket.on("client count", (count) => {
   if (clientCountEl) {
     clientCountEl.textContent = `Connected clients: ${count}`;
@@ -16,6 +18,7 @@ socket.on("client count", (count) => {
 socket.on("chat message", (data) => {
   appendMessage(data, false);
   messageFeedback.textContent = "";
+  messageTone.play();
 });
 
 socket.on("typing", (name) => {
