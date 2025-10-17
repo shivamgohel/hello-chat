@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const http = require("http");
 
 const { serverConfig, logger } = require("./config/index");
 
@@ -29,8 +30,27 @@ app.use((req, res, next) => {
   next();
 });
 
+const server = http.createServer(app);
+const io = require("socket.io")(server);
+
+let socketConnected = new Set();
+
+function onConnected(socket) {
+  logger.info(`Socket connected: ${socket.id}`);
+  socketConnected.add(socket.id);
+  io.emit("client count", socketConnected.size);
+
+  socket.on("disconnect", () => {
+    logger.info(`Socket disconnected: ${socket.id}`);
+    socketConnected.delete(socket.id);
+    io.emit("client count", socketConnected.size);
+  });
+}
+
+io.on("connection", onConnected);
+
 // Start the server
-const server = app.listen(serverConfig.PORT, () => {
+server.listen(serverConfig.PORT, () => {
   logger.info(`Server started on port ${serverConfig.PORT}`);
 });
 

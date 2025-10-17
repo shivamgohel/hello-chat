@@ -22,9 +22,11 @@ h1 {
 h3#client-count {
   margin: 10px 0 15px;
   text-align: center;
-  color: #ccc;
-  font-weight: 500;
-  font-size: 18px;
+  color: #888888;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 1.2px;
 }
 
 .main {
