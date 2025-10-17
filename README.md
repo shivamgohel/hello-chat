@@ -1,11 +1,75 @@
 # 💬 helloChat
 
-A real-time web-based chat application built using **Node.js**, **Express**, and **Socket.IO**.
+## 🧾 About
 
-## 🚀 Features
+**helloChat** is a simple, real-time web-based chat application built with **Node.js**, **Express**, and **Socket.IO**. It supports multiple connected clients communicating instantly, with typing indicators and audio notifications for incoming messages.
 
-- Real-time bi-directional communication using WebSockets
-- Server setup with Express.js
-- Static file serving (for frontend)
-- Modular project structure
-- Logging middleware
+This project demonstrates the basics of WebSocket communication, server-client interaction, and user-friendly real-time updates in a modular, easy-to-understand codebase.
+
+---
+
+## 📸 Demo Screenshot
+
+Here’s a quick look at helloChat in action from Pikachu’s point of view ⚡️
+
+![Pikachu chatting screenshot](./public/pikachu-chat.png)
+
+---
+
+## 🧰 Tech Stack
+
+- Node.js & Express.js
+- Socket.IO for WebSocket communication
+- Vanilla JavaScript, HTML, and CSS for frontend
+- Audio notifications for new messages
+
+---
+
+## ✅ Core Features
+
+---
+
+### 1. Real-time Chat
+
+- Real-time, bi-directional messaging between clients via WebSockets.
+- Messages include sender name, text content, and timestamp.
+- Frontend displays messages from all connected clients instantly.
+
+---
+
+### 2. Typing Indicator
+
+- Shows when a user is typing.
+- Updates dynamically for all connected clients.
+
+---
+
+### 3. Connected Clients Count
+
+- Displays current number of connected users in real-time.
+
+---
+
+### 4. Audio Notification
+
+- Plays a sound when a new message is received by other clients.
+
+---
+
+## 📄 Usage
+
+- Enter your **name** and **message** in the input fields to start chatting.
+- Messages sent appear instantly to all connected users.
+- See real-time typing indicators when other users are typing.
+- Watch the live count of connected users update dynamically.
+- New messages from others trigger an audio notification.
+
+---
+
+## 🎵 Audio Notification
+
+- An audio sound plays whenever a new message is received from another user.
+- The notification audio file is located at `public/audio/notification.mp3`.
+- Audio notifications help alert users to incoming messages, especially when the app is running in the background or a different tab.
+
+---
