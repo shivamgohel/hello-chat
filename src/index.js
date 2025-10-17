@@ -44,6 +44,10 @@ function onConnected(socket) {
     socket.broadcast.emit("chat message", data);
   });
 
+  socket.on("typing", (name) => {
+    socket.broadcast.emit("typing", name);
+  });
+
   socket.on("disconnect", () => {
     logger.info(`Socket disconnected: ${socket.id}`);
     socketConnected.delete(socket.id);
