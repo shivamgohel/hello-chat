@@ -40,6 +40,10 @@ function onConnected(socket) {
   socketConnected.add(socket.id);
   io.emit("client count", socketConnected.size);
 
+  socket.on("chat message", (data) => {
+    socket.broadcast.emit("chat message", data);
+  });
+
   socket.on("disconnect", () => {
     logger.info(`Socket disconnected: ${socket.id}`);
     socketConnected.delete(socket.id);
