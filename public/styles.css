@@ -1,0 +1,155 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  background-color: #00c300;
+  color: white;
+  padding: 15px;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+h3#client-count {
+  margin: 10px 0 15px;
+  text-align: center;
+  color: #ccc;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.main {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #000;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-line {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  position: relative;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 16px;
+  display: inline-block;
+  color: #fff;
+}
+
+.chat-line.user {
+  background-color: #1e4021;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat-line.other {
+  background-color: #222;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.read-receipt {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  user-select: none;
+}
+
+.read-receipt i {
+  color: #00c300;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.name span {
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.name-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Typing feedback */
+.message-feedback {
+  font-size: 14px;
+  color: #aaa;
+  padding: 5px 15px;
+  min-height: 20px;
+  user-select: none;
+}
+
+/* Message input form */
+form.message-form {
+  display: flex;
+  padding: 10px 15px;
+  border-top: 1px solid #333;
+  background: #000;
+}
+
+form.message-form input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 25px;
+  outline: none;
+  background-color: #111;
+  color: #fff;
+  transition: border-color 0.3s;
+}
+
+form.message-form input[type="text"]:focus {
+  border-color: #00c300;
+}
+
+form.message-form button {
+  margin-left: 10px;
+  background-color: #00c300;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form.message-form button:hover {
+  background-color: #009900;
+}
