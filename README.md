@@ -20,7 +20,7 @@ Here’s a quick look at helloChat in action from Pikachu’s point of view ⚡�
 
 - Node.js & Express.js
 - Socket.IO for WebSocket communication
-- Vanilla JavaScript, HTML, and CSS for frontend
+- JavaScript, HTML, and CSS for frontend
 - Audio notifications for new messages
 
 ---
@@ -69,7 +69,7 @@ Here’s a quick look at helloChat in action from Pikachu’s point of view ⚡�
 ## 🎵 Audio Notification
 
 - An audio sound plays whenever a new message is received from another user.
-- The notification audio file is located at `public/audio/notification.mp3`.
-- Audio notifications help alert users to incoming messages, especially when the app is running in the background or a different tab.
+- The notification audio file is located at `public/message-tone.mp3`.
 
 ---
+
