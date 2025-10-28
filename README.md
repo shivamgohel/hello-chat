@@ -73,3 +73,59 @@ Here’s a quick look at helloChat in action from Pikachu’s point of view ⚡�
 - Audio notifications help alert users to incoming messages, especially when the app is running in the background or a different tab.
 
 ---
+
+## 🗂 Architecture & Flow
+
+The helloChat application uses a **centralized Socket.IO server** to manage real-time messaging between multiple clients. The following diagrams illustrate the high-level architecture and message flow.
+
+### 1️⃣ High-Level Architecture
+
+```mermaid
+    graph TD
+    Server[Express + Socket.IO Server] -->|Broadcast Messages| ClientA[Client A]
+    Server -->|Broadcast Messages| ClientB[Client B]
+    Server -->|Broadcast Messages| ClientC[Client C]
+
+    ClientA -->|Send Message| Server
+    ClientB -->|Send Message| Server
+    ClientC -->|Send Message| Server
+
+    style Server fill:#f96,stroke:#333
+    style ClientA fill:#9cf,stroke:#333
+    style ClientB fill:#9cf,stroke:#333
+    style ClientC fill:#9cf,stroke:#333
+```
+
+### 2️⃣ Message Flow
+
+```mermaid
+    sequenceDiagram
+    participant C1 as Client 1
+    participant S as Server
+    participant C2 as Client 2
+
+    C1->>S: 1. Emit "chat message"
+    S-->>C1: 2. Acknowledge receipt
+    S->>C2: 3. Broadcast to other clients
+    Note right of C2: 4. Display message & trigger notification
+
+```
+
+### 3️⃣ Core Communication Flow
+
+1. Client initiates WebSocket connection to the server.
+2. Server establishes and maintains the connection.
+3. Client sends different types of events:
+   - Chat messages
+   - Typing indicators
+   - Connection/disconnection events
+4. Server processes incoming events and broadcasts to clients.
+5. Receiving clients update their UI accordingly, displaying messages, typing indicators, and updating the connected users count.
+
+---
+
+## Conclusion
+
+helloChat is a straightforward yet effective demonstration of real-time web communication using modern technologies. It provides a solid foundation for building more complex chat applications with additional features like user authentication, message history, and multimedia support. Feel free to explore, modify, and expand upon this project! Happy chatting! 💬🚀
+
+---
